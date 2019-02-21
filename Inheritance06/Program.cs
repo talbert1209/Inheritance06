@@ -65,9 +65,10 @@ namespace Inheritance06
 
         public override void Attack()
         {
-            var energy = Random.Next(Energy + 1);
+            var energyUsage = Random.Next(Energy + 1);
             base.Attack();
-            Console.WriteLine($"     (Wizard {Name} depleted {energy} energy.)");
+            Energy -= energyUsage; 
+            Console.WriteLine($"     (Wizard {Name} depleted {energyUsage} energy.)");
         }
     }
 }
