@@ -35,16 +35,27 @@ namespace Inheritance06
     {
         public string Name { get; set; }
         public int Strength { get; set; }
-        private readonly Random _random;
+        protected readonly Random Random;
 
         public Player()
         {
-            _random = new Random();
+            Random = new Random();
         }
         public virtual void Attack()
         {
-            var damage = _random.Next(Strength + 1);
+            var damage = Random.Next(Strength + 1);
             Console.WriteLine($"{Name} attacked for {damage} damage.");
+        }
+    }
+
+    public class Warrior : Player
+    {
+        public int Bonus { get; set; }
+
+        public override void Attack()
+        {
+            var damage = Random.Next(Strength + 1) + Bonus;
+            Console.WriteLine($"{Name} charges for {damage} damage (includes +{Bonus} bonus.)");
         }
     }
 }
