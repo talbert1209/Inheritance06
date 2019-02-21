@@ -58,5 +58,17 @@ namespace Inheritance06
             Console.WriteLine($"{Name} charges for {damage} damage (includes +{Bonus} bonus.)");
         }
     }
+
+    public class Wizard : Player
+    {
+        public int Energy { get; set; }
+
+        public override void Attack()
+        {
+            var energy = Random.Next(Energy + 1);
+            base.Attack();
+            Console.WriteLine($"(Wizard {Name} depleted {energy} energy.)");
+        }
+    }
 }
 
