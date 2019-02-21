@@ -67,7 +67,7 @@ namespace Inheritance06
         {
             var energy = Random.Next(Energy + 1);
             base.Attack();
-            Console.WriteLine($"(Wizard {Name} depleted {energy} energy.)");
+            Console.WriteLine($"     (Wizard {Name} depleted {energy} energy.)");
         }
     }
 }
