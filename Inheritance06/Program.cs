@@ -30,5 +30,22 @@ namespace Inheritance06
             }
         }
     }
+
+    public class Player
+    {
+        public string Name { get; set; }
+        public int Strength { get; set; }
+        private readonly Random _random;
+
+        public Player()
+        {
+            _random = new Random();
+        }
+        public virtual void Attack()
+        {
+            var damage = _random.Next(Strength + 1);
+            Console.WriteLine($"{Name} attacked for {damage} damage.");
+        }
+    }
 }
-}
+
